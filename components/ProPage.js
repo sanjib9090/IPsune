@@ -30,7 +30,7 @@ export default function ProPage({
             isDarkMode ? 'text-white' : 'text-gray-800'
           }`}
         >
-          Made by Sanjib with ❤️
+          Made by Sanjib Barad with❤️
         </h1>
         <div
           className={`p-6 rounded-lg shadow-md ${
