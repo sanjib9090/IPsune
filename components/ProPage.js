@@ -30,7 +30,7 @@ export default function ProPage({
             isDarkMode ? 'text-white' : 'text-gray-800'
           }`}
         >
-          Go Pro
+          Made by Sanjib with ❤️
         </h1>
         <div
           className={`p-6 rounded-lg shadow-md ${
@@ -50,14 +50,13 @@ export default function ProPage({
             }`}
           >
 Ipsune is a JioSaavn-inspired music streaming app built with Next.js and React.
-
-Instead of using official APIs, it scrapes data from JioSaavn and FreeConvert, so no API keys are needed.
-The app has a clean, responsive UI for smooth music streaming and conversion.
+It scrapes data from JioSaavn and FreeConvert, requiring no API keys.
+The app offers a clean, responsive UI for seamless streaming and MP4-to-MP3 conversion.
 <br />
             <br />
-⚠️ Legal Notice: This project uses scraping for educational purposes.
-Scraping content without permission may violate Terms of Service or local laws.
-Use official APIs in production to ensure compliance.        </p>
+⚠️ Legal Notice: This project uses scraping for educational purposes only.
+Unauthorized scraping may violate Terms of Service or laws—use official APIs in production. 
+  </p>
           <ul
             className={`space-y-2 mb-6 ${
               isDarkMode ? 'text-gray-300' : 'text-gray-700'
