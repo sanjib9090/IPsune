@@ -1,0 +1,127 @@
+.container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  background: #f9f9f9;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 100px;
+}
+
+.albumSection {
+  margin-bottom: 20px;
+}
+
+.albumCard {
+  display: flex;
+  align-items: flex-start;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  background: white;
+}
+
+.albumImage {
+  width: 150px;
+  height: 150px;
+  margin-right: 20px;
+}
+
+.albumDetails {
+  flex-grow: 1;
+}
+
+.albumTitle {
+  margin: 0 0 5px;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.albumSubtitle {
+  margin: 0 0 5px;
+  color: #666;
+  font-size: 0.9em;
+}
+
+.albumPlays {
+  margin: 0 0 10px;
+  color: #999;
+  font-size: 0.8em;
+}
+
+.controls {
+  margin-bottom: 10px;
+}
+
+.playButton, .likeButton {
+  padding: 5px 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.playButton {
+  font-size: 1.5em;
+  color: #1db954;
+}
+
+.likeButton {
+  font-size: 1.2em;
+  color: #ccc;
+}
+
+.downloadButton {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.songList {
+  margin-top: 10px;
+}
+
+.songItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.songTitle {
+  color: #333;
+  font-size: 0.9em;
+}
+
+.songArtists {
+  color: #666;
+  font-size: 0.8em;
+}
+
+.playIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  border-top: 1px solid #ddd;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9em;
+}
