@@ -53,7 +53,7 @@ export default function Home() {
   // Helper function to fetch auth_url
   const fetchAuthUrl = useCallback(async (encryptedMediaUrl) => {
     try {
-      const response = await fetch(`https://ipsune-pvt.vercel.app/api/fetchaudio?encryptedMediaUrl=${encodeURIComponent(encryptedMediaUrl)}`, {
+      const response = await fetch(`https://ipsunepvt.onrender.com/api/fetchaudio?encryptedMediaUrl=${encodeURIComponent(encryptedMediaUrl)}`, {
         cache: 'no-store',
       });
       if (!response.ok) throw new Error(`Failed to fetch auth_url: ${response.status}`);
@@ -185,7 +185,7 @@ export default function Home() {
       setIsLoading(true);
       setError(null);
       try {
-        const response = await fetch(`https://ipsune-pvt.vercel.app/api/searchapi?livesearch=${encodeURIComponent(searchQuery)}`, {
+        const response = await fetch(`https://ipsunepvt.onrender.com/api/searchapi?livesearch=${encodeURIComponent(searchQuery)}`, {
           cache: 'no-store',
         });
         if (!response.ok) throw new Error(`Search API request failed with status ${response.status}`);
@@ -251,11 +251,11 @@ export default function Home() {
       try {
         let urlParams = `token=${encodeURIComponent(mediaId)}&type=${mediaType}`;
         if (mediaType === "featured") urlParams += "&p=1&n=50";
-        const response = await fetch(`https://ipsune-pvt.vercel.app/api/jiosaavn?${urlParams}`);
+        const response = await fetch(`https://ipsunepvt.onrender.com/api/jiosaavn?${urlParams}`);
         if (!response.ok) throw new Error(`API request failed with status ${response.status}`);
 
         const data = await response.json();
-        console.log("✅ Fetched from https://ipsune-pvt.vercel.app/api/jiosaavn", data);
+        console.log("✅ Fetched from https://ipsunepvt.onrender.com/api/jiosaavn", data);
 
         let transformedSongs = [];
         const album_id = getAlbumId(data.songs?.[0] || null, data);
@@ -358,7 +358,7 @@ export default function Home() {
       setIsLoading(true);
       setError(null);
       try {
-        const response = await fetch('https://ipsune-pvt.vercel.app/api/mainapi', { cache: 'no-store' });
+        const response = await fetch('https://ipsunepvt.onrender.com/api/mainapi', { cache: 'no-store' });
         if (!response.ok) throw new Error(`API request failed with status ${response.status}`);
         const json = await response.json();
         setHomeData(json);
@@ -383,7 +383,7 @@ export default function Home() {
         const promises = [];
         if (mediaData.language) {
           promises.push(
-            fetch(`https://ipsune-pvt.vercel.app/api/trending/?language=${encodeURIComponent(mediaData.language)}`, { cache: "no-store" })
+            fetch(`https://ipsunepvt.onrender.com/api/trending/?language=${encodeURIComponent(mediaData.language)}`, { cache: "no-store" })
               .then(res => res.ok ? res.json() : null)
               .then(data => data ? setRecommendedSongs(formatData(data.reco || [])) : null)
               .catch(err => console.error('❌ Error fetching language reco:', err))
@@ -391,7 +391,7 @@ export default function Home() {
         }
         if (mediaData.year) {
           promises.push(
-            fetch(`https://ipsune-pvt.vercel.app/api/yearlyReco?year=${encodeURIComponent(mediaData.year)}`, { cache: "no-store" })
+            fetch(`https://ipsunepvt.onrender.com/api/yearlyReco?year=${encodeURIComponent(mediaData.year)}`, { cache: "no-store" })
               .then(res => res.ok ? res.json() : null)
               .then(data => data ? setYearlyRecoAlbums(formatData(data)) : null)
               .catch(err => console.error('❌ Error fetching yearly reco:', err))
@@ -399,14 +399,14 @@ export default function Home() {
         }
         if (mediaData.album_id && mediaData.album_id !== 'default_album_id') {
           promises.push(
-            fetch(`https://ipsune-pvt.vercel.app/api/albumreco?albumid=${encodeURIComponent(mediaData.album_id)}`, { cache: "no-store" })
+            fetch(`https://ipsunepvt.onrender.com/api/albumreco?albumid=${encodeURIComponent(mediaData.album_id)}`, { cache: "no-store" })
               .then(res => res.ok ? res.json() : null)
               .then(data => data && Array.isArray(data) ? setAlbumRecoAlbums(formatData(data)) : null)
               .catch(err => console.error('❌ Error fetching album reco:', err))
           );
         }
         promises.push(
-          fetch(`https://ipsune-pvt.vercel.app/api/trending?language=${encodeURIComponent(mediaData.language)}`, { cache: "no-store" })
+          fetch(`https://ipsunepvt.onrender.com/api/trending?language=${encodeURIComponent(mediaData.language)}`, { cache: "no-store" })
             .then(res => res.ok ? res.json() : null)
             .then(data => data ? setTrendingSongs(formatData(data)) : null)
             .catch(err => console.error('❌ Error fetching trending:', err))
