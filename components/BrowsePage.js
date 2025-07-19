@@ -57,7 +57,7 @@ export default function BrowsePage({
       setIsLoading(true);
       setError(null);
       try {
-        const response = await fetch(`/api/trending?language=${encodeURIComponent(selectedLanguage)}`, {
+        const response = await fetch(`https://ipsune-pvt.vercel.app/api/trending?language=${encodeURIComponent(selectedLanguage)}`, {
           cache: 'no-store',
         });
         if (!response.ok) throw new Error(`Failed to fetch trending songs: ${response.status}`);
